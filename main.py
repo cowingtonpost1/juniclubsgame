@@ -26,18 +26,21 @@ running = True
 while running:
     screen.blit(pygame.image.load('background.png'), (0,0))
 
+    keys = pygame.key.get_pressed()
+
+    print(keys)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_w:
-                player.y -= 15# 200 pixels per second
-            elif event.key == pygame.K_s:
-                player.y += 15
-            elif event.key == pygame.K_a:
-                player.x  -= 15
-            elif event.key == pygame.K_d:
-                player.x += 15
+    if keys[pygame.K_w]:
+        player.y -= 3
+    elif keys[pygame.K_s]:
+        player.y += 3
+    elif keys[pygame.K_a]:
+        player.x  -= 3
+    elif keys[pygame.K_d]:
+        player.x += 3
 
     player.update()
 
