@@ -18,17 +18,16 @@ class Player(pygame.sprite.Sprite):
         self.x = x
         self.y = y
     def update(self):
-        screen.blit(self.image, (self.x, self.y))
+        screen.blit(self.image, (self.x, self.y)) #Draw image to screen
 
 
 player = Player(0,0)
 running = True
 while running:
-    screen.blit(pygame.image.load('background.png'), (0,0))
+    screen.blit(pygame.image.load('background.png'), (0,0)) #Draw background
 
     keys = pygame.key.get_pressed()
 
-    print(keys)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
